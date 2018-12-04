@@ -7,7 +7,8 @@ steps:
       architecture: "x64"
 
   - script: |
-      hostname "factoryvm-az131.k4f5cmcwetvejmwckdrrq50bfc.hx.internal.cloudapp.net"
+      sudo hostname "factoryvm-az131.k4f5cmcwetvejmwckdrrq50bfc.hx.internal.cloudapp.net"
+      hostname
       pip install --upgrade pip
       pip install --upgrade tox
       az extension add --name azure-cli-iot-ext
