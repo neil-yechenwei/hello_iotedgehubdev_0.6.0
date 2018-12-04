@@ -15,6 +15,6 @@ steps:
       pip install --upgrade tox
       echo "testttttttttttttt"
       python --version
-      pip install iotedgehubdev==0.5.0
+      pip install --index-url "https://test.pypi.org/simple/" iotedgehubdev==0.6.0rc0 --extra-index-url "https://pypi.org/simple"
       sudo `which iotedgehubdev` setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
     displayName: "Install Azure Cli iot extension"

@@ -17,6 +17,6 @@ steps:
       pip install tox
       echo "tesettttttttttt"
       python --version
-      pip install iotedgehubdev==0.5.0
+      pip install --index-url "https://test.pypi.org/simple/" iotedgehubdev==0.6.0rc0 --extra-index-url "https://pypi.org/simple"
       iotedgehubdev setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
     displayName: "Run tests against iotedgehubdev source code"
