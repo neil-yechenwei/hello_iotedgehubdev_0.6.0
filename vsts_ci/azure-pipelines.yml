@@ -1,15 +1,15 @@
 jobs:
-  - job: MacOS
-    pool:
-      vmImage: macOS-10.13
-    steps:
-      - template: darwin/continuous-build-darwin.yml
+  # - job: MacOS
+  #   pool:
+  #     vmImage: macOS-10.13
+  #   steps:
+  #     - template: darwin/continuous-build-darwin.yml
 
-  - job: Windows
-    pool:
-      vmImage: win1803
-    steps:
-      - template: win32/continuous-build-win32.yml
+  # - job: Windows
+  #   pool:
+  #     vmImage: win1803
+  #   steps:
+  #     - template: win32/continuous-build-win32.yml
 
   - job: Linux
     pool:
