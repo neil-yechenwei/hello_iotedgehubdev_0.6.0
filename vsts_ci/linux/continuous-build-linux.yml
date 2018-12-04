@@ -17,5 +17,5 @@ steps:
       echo "testettttttttt"
       python --version
       pip install iotedgehubdev==0.5.0
-      sudo iotedgehubdev setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
+      sudo `which iotedgehubdev` setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
     displayName: "Run tests against iotedgehubdev source code with tox"
