@@ -11,12 +11,13 @@ steps:
       hostname
       az extension add --name azure-cli-iot-ext
       az --version
-    displayName: "Install Azure Cli iot extension"
-
-  - script: |
       pip install --upgrade pip
       pip install --upgrade tox
-    displayName: "Update and install required tools"
+      echo "testttttttttttttt"
+      python --version
+      pip install iotedgehubdev==0.5.0
+      sudo `which iotedgehubdev` setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
+    displayName: "Install Azure Cli iot extension"
 
   - script: |
       brew install docker
@@ -34,8 +35,4 @@ steps:
       brew services start docker-machine
       brew install docker-compose
       docker version
-      echo "testttttttttttttt"
-      python --version
-      pip install iotedgehubdev==0.5.0
-      sudo `which iotedgehubdev` setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
     displayName: "Install docker and run tests against iotedgehubdev source code with tox"
