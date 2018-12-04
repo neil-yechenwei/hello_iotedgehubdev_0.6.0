@@ -1,8 +1,8 @@
 steps:
   - task: UsePythonVersion@0
-    displayName: "Use Python 3.6"
+    displayName: "Use Python 2.7"
     inputs:
-      versionSpec: 3.6
+      versionSpec: 2.7
       addToPath: true
       architecture: "x64"
 
@@ -14,5 +14,7 @@ steps:
     displayName: "Update and install required tools"
 
   - script: |
-      pip install iotedgehubdev@0.5.0
+      echo "testettttttttt"
+      pip install iotedgehubdev==0.5.0
+      iotedgehubdev setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
     displayName: "Run tests against iotedgehubdev source code with tox"

@@ -9,9 +9,13 @@ steps:
   - powershell: |
       $env:Path += ";C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin"
       choco install python2
-      choco install python --version 3.6.6
-      $env:Path += ";C:\Python36;C:\Python36\Scripts"
-      python -m pip install --upgrade pip
+      $env:Path += ";C:\Python27;C:\Python27\Scripts"
+      # choco install python --version 3.6.6
+      # $env:Path += ";C:\Python36;C:\Python36\Scripts"
+      # choco install python3.7.1
+      # $env:Path += ";C:\Python37;C:\Python37\Scripts"
       pip install tox
-      pip install iotedgehubdev@0.5.0
+      echo "tesettttttttttt"
+      pip install iotedgehubdev==0.5.0
+      iotedgehubdev setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
     displayName: "Run tests against iotedgehubdev source code"

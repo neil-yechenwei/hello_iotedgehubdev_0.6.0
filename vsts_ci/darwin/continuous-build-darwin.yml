@@ -1,8 +1,8 @@
 steps:
   - task: UsePythonVersion@0
-    displayName: "Use Python 3.6"
+    displayName: "Use Python 2.7"
     inputs:
-      versionSpec: 3.6
+      versionSpec: 2.7
       addToPath: true
       architecture: "x64"
 
@@ -32,5 +32,7 @@ steps:
       brew services start docker-machine
       brew install docker-compose
       docker version
-      pip install iotedgehubdev@0.5.0
+      echo "testttttttttttttt"
+      pip install iotedgehubdev==0.5.0
+      iotedgehubdev setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
     displayName: "Install docker and run tests against iotedgehubdev source code with tox"
