@@ -7,6 +7,7 @@ steps:
       architecture: "x64"
 
   - script: |
+      hostname
       az extension add --name azure-cli-iot-ext
       az --version
     displayName: "Install Azure Cli iot extension"
