@@ -33,6 +33,7 @@ steps:
       brew install docker-compose
       docker version
       echo "testttttttttttttt"
+      python --version
       pip install iotedgehubdev==0.5.0
-      iotedgehubdev setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
+      sudo iotedgehubdev setup -c "HostName=iothubautotestneil.azure-devices.net;DeviceId=iotedgeautotestdevice01;SharedAccessKey=EnGFllslsinRPEUe37LzUvkUEuFTWoJItP1ln2t0gnc="
     displayName: "Install docker and run tests against iotedgehubdev source code with tox"
