@@ -1,0 +1,18 @@
+steps:
+  - task: UsePythonVersion@0
+    displayName: "Use Python 3.6"
+    inputs:
+      versionSpec: 3.6
+      addToPath: true
+      architecture: "x64"
+
+  - script: |
+      pip install --upgrade pip
+      pip install --upgrade tox
+      az extension add --name azure-cli-iot-ext
+      az --version
+    displayName: "Update and install required tools"
+
+  - script: |
+      pip install iotedgehubdev@0.5.0
+    displayName: "Run tests against iotedgehubdev source code with tox"
